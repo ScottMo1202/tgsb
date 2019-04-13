@@ -2,7 +2,11 @@
     "name": "Even Financial Helper",
     "version": "1.0",
     "description": "123",
-    "permission": ["storage"],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "declarativeContent"
+    ],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
@@ -14,7 +18,7 @@
         }
     ], 
     "page_action":{
-        "default_popup": "pop.html"
+        "default_popup": "popup.html"
     },
     "manifest_version": 2
 }
