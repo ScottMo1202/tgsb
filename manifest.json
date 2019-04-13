@@ -14,7 +14,7 @@
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["jquery.js", "checkoutListener.js" ]
+            "js": ["./contentScripts/jquery.js", "./contentScripts/checkoutListener.js" ]
         }
     ], 
     "page_action":{
