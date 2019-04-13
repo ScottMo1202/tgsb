@@ -11,6 +11,12 @@
         "scripts": ["background.js"],
         "persistent": false
     },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["./contentScripts/jquery.js", "./contentScripts/checkoutListener.js" ]
+        }
+    ], 
     "page_action":{
         "default_popup": "popup.html"
     },
