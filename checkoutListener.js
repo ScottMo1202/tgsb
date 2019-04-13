@@ -1,0 +1,3 @@
+$('button').click(() => {
+    alert('hellooooo');
+})

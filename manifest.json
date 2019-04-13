@@ -4,9 +4,15 @@
     "description": "123",
     "permission": ["storage"],
     "background": {
-        "script": ["background.js"],
+        "scripts": ["background.js"],
         "persistent": false
     },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["jquery.js", "checkoutListener.js" ]
+        }
+    ], 
     "page_action":{
         "default_popup": "pop.html"
     },
