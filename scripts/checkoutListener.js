@@ -14,7 +14,7 @@ $(() => {
             //'checkout',
             'credit card',
             'creditcard',
-            'billing',
+            //'billing',
             'place order',
             //'pay',
             'visa/mastercard',
@@ -28,9 +28,11 @@ $(() => {
     Object.keys(KEYWORDS).forEach(keywords => {
         checkers = checkers.concat(KEYWORDS[keywords]);
     });
-    const found = checkers.any(keyword =>
-        $(`*:Contains(${keyword})`).length
-    );
+    const found = checkers.any(keyword => {
+        console.log(keyword)
+        console.log($(`*:Contains(${keyword})`).length)
+        return $(`*:Contains(${keyword})`).length
+    });
 
     if (found) {
         chrome.storage.sync.get(["check"], function (data) {
