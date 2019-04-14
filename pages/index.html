@@ -1,156 +1,166 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Even</title>
-    <script src="../scripts/jquery.js"></script>
-    <script src="../scripts/popper.min.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
-    <script src="../scripts/index.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Even</title>
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/popper.min.js"></script>
+  <script src="../scripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../styles/bootstrap.min.css">
+  <script src="../scripts/index.js"></script>
 
 </head>
-  <body>
-    <div class="container" >
-      <div id="loanForm">
+
+<body>
+  <div class="container">
+    <div id="loanForm">
       <div class="alert alert-danger" id="error" role="alert">
-          Please fill all required information!
+        Please fill all required information!
       </div>
       <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Required Information
-                </button>
-              </h2>
-            </div>
-        
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                  <form>
-                      <div class="form-row">
-                          <div class="form-group col-md-6">
-                              <label for="firstName">First Name</label>
-                              <input type="text" class="form-control" id="inputFirstName">
-                          </div>
-                          <div class="form-group col-md-6">
-                              <label for="lastName">Last Name</label>
-                              <input type="text" class="form-control" id="inputLastName">
-                          </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputEmail4">Email</label>
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                              <label for="inputLoanAmount">Loan Amount</label>
-                              <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                          <span class="input-group-text">$</span>
-                                      </div>
-                                  <input type="number" class="form-control" id="inputLoanAmount">
-                              </div>
-                      </div>
-                      <div class="form-row">
-                          <label for="inputCreditScore">Credit Score</label>
-                          <input type="number" class="form-control" id="inputCreditScore" placeholder="300-850" min=300 max=850>
-                      </div>
-                    </form>
-                  </div>
-            </div>
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Required Information
+              </button>
+            </h2>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Optional Information
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
-                  <form>
-                      <div class="form-group">
-                          <label for="inputAddress">Address</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                          </div>
-                          <div class="form-group">
-                          <label for="inputAddress2">Address 2</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                          </div>
-                          <div class="form-row">
-                          <div class="form-group col-md-6">
-                              <label for="inputCity">City</label>
-                              <input type="text" class="form-control" id="inputCity">
-                          </div>
-                          <div class="form-group col-md-4">
-                              <label for="inputState">State</label>
-                              <input type="text" class="form-control" id="inputState">
-                          </div>
-                          <div class="form-group col-md-2">
-                              <label for="inputZip">Zip</label>
-                              <input type="text" class="form-control" id="inputZip">
-                          </div>
-                      </div>
-                      <div class="form-row">
-                          <div class="form-group col-md-6">
-                              <label for="inputEducationLevel">Education Level</label>
-                              <select class="custom-select" id="inputEducationLevel">
-                                      <option selected>Choose...</option>
-                                      <option value="associate">Associate</option>
-                                      <option value="bachelors">Bachelors</option>
-                                      <option value="high_school">High School</option>
-                                      <option value="masters">Masters</option>
-                                      <option value="other">Other</option>
-                              </select>
-                          </div>
-                          <div class="form-group col-md-6">
-                              <label for="inputSSN">SSN</label>
-                              <input type="text" id="inputSSN" class="form-control">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="inputEmploymentStatus">Employment Status: </label> 
-                          <select class="custom-select" id="inputEmploymentStatus">
-                                  <option selected>Choose...</option>
-                                  <option value="employed">Employed</option>
-                                  <option value="military">Military</option>
-                                  <option value="not_employed">Not Employed</option>
-                                  <option value="self_employed">Self Employed</option>
-                                  <option value="retired">Retired</option>
-                                  <option value="other">Other</option>
-                          </select>
-                      </div>
-                              
-                      <div class="form-group">
-                              <label for="inputAnnualIncome">Annual Income</label>
-                              <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                          <span class="input-group-text">$</span>
-                                      </div>
-                                  <input type="number" class="form-control" id="inputAnnualIncome">
-                              </div>
-                      </div>
-                  </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="consentCheck">
-              <label class="form-check-label" for="consentCheck">I agree to be contacted by Even Financial and its partners at the telephone number(s) I have provided above to explore personal loan offers, including contact through automatic dialing systems, artificial or pre-recorded voice messaging, or text message. I understand my consent is not required as a condition to purchasing any goods or services from anyone."</label>
-          </div>
-           <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary" id="btnSubmit">Search</button></div>
-          </div>
-        <div id="result">
-            <small id="disclaimer">Disclaimer: This is an estimate. Actual rates may vary.</small>
 
-            <div id="loanResults" class="list-group"></div>
-            <div style="margin: 10pt" class="d-flex justify-content-center"><button type="submit" class="btn btn-primary" id="btnBack">Back</button></div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="inputLoanAmount">Loan Amount</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control" id="inputLoanAmount">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="inputCreditScore">Credit Score</label>
+                  <input type="number" class="form-control" id="inputCreditScore" placeholder="300-850" min=300 max=850>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Optional Information
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <input type="text" class="form-control" id="inputState">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEducationLevel">Education Level</label>
+                    <select class="custom-select" id="inputEducationLevel">
+                      <option selected>Choose...</option>
+                      <option value="associate">Associate</option>
+                      <option value="bachelors">Bachelors</option>
+                      <option value="high_school">High School</option>
+                      <option value="masters">Masters</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputSSN">SSN</label>
+                    <input type="text" id="inputSSN" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmploymentStatus">Employment Status: </label>
+                  <select class="custom-select" id="inputEmploymentStatus">
+                    <option selected>Choose...</option>
+                    <option value="employed">Employed</option>
+                    <option value="military">Military</option>
+                    <option value="not_employed">Not Employed</option>
+                    <option value="self_employed">Self Employed</option>
+                    <option value="retired">Retired</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputAnnualIncome">Annual Income</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control" id="inputAnnualIncome">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-  </body>
+      </div>
+      <div class="form-group form-check" style="margin-top: 10pt">
+        <input type="checkbox" class="form-check-input" id="consentCheck">
+        <label class="form-check-label" for="consentCheck">I agree to be contacted by Even Financial and its partners at
+          the telephone number(s) I have provided above to explore personal loan offers, including contact through
+          automatic dialing systems, artificial or pre-recorded voice messaging, or text message. I understand my
+          consent is not required as a condition to purchasing any goods or services from anyone."</label>
+      </div>
+      <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary"
+          id="btnSubmit">Search</button></div>
+    </div>
+    <div id="result">
+      <small id="disclaimer">Disclaimer: This is an estimate. Actual rates may vary.</small>
+
+      <div id="loanResults" class="list-group"></div>
+      <div style="margin: 10pt" class="d-flex justify-content-center"><button type="submit" class="btn btn-primary"
+          id="btnBack">Back</button></div>
+    </div>
+  </div>
+</body>
+
 </html>
