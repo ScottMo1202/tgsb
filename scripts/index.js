@@ -70,7 +70,6 @@ $(document).ready(function () {
                                     <div class="col"><h6>Total Payment: $${offer.meanTotalPayment}</h6></div>
                                 </div>
                             </div>
-
                         </a>`
                         )
                     }

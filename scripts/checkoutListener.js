@@ -34,7 +34,6 @@ $(() => {
 
     if (found) {
         chrome.storage.sync.get(["check"], function (data) {
-            checker.checked = data.check
             if (data.check) {
                 if (confirm(`That's a lot of cash!!!  
                 Are you broke, get a personal loan!`)) {
