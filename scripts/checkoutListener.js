@@ -11,7 +11,6 @@ KEYWORDS = {
     ],
     matchers: [
         'checkout',
-        'check out',
         'credit card',
         'creditcard',
         'billing',
@@ -30,8 +29,10 @@ $(() => {
     let checkers = KEYWORDS.singleWords
         .concat(KEYWORDS.platforms)
         .concat(KEYWORDS.matchers);
-    let found = checkers.any(keyword => 
-        $(`*:Contains(${keyword})`).length
+    let found = checkers.any((keyword) => { 
+        console.log($(`*:Contains(${keyword})`).length)
+        console.log(keyword)
+        return $(`*:Contains(${keyword})`).length}
     );
     console.log(found);
 });
