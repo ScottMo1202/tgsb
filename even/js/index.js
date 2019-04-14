@@ -21,8 +21,8 @@ $(document).ready(function() {
             console.log(response);
           });
     })*/
+
     $("#btnSubmit").click(function(){
-        console.log($("#inputEducationLevel").val())
         var requiredFields=["inputFirstName", "inputLastName", "inputEmail", "dateOfBirth", "inputLoanAmount", "inputCreditScore"];
         for  (var s of requiredFields) {
             if ($('#'+s).val()=="") {
@@ -36,7 +36,7 @@ $(document).ready(function() {
         }
 
         var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-            targetUrl = "https://api.evenfinancial.com/leads/rateTables"
+            targetUrl = "http://localhost:3000/xhr.html/"//"https://api.evenfinancial.com/leads/rateTables"
 
         fetch(targetUrl,{
             body: JSON.stringify({
@@ -74,8 +74,8 @@ $(document).ready(function() {
                 'content-type': 'application/json',
                 'Authorization': 'Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2'
             },
-            crossDomain: true
-            //mode: 'no-cors'
+            //crossDomain: true
+            // mode: 'no-cors'
         })
         .then(function(resp) {  
             if (resp.ok) {

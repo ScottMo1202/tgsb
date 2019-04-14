@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>XHR POST</title>
+    <script type="text/javascript">
+      var data = JSON.stringify({});
+
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener("readystatechange", function () {
+       if (this.readyState === 4) {
+         console.log(this.responseText);
+       }
+      });
+
+      xhr.open("POST", "https://api.evenfinancial.com/leads/rateTables");
+      xhr.setRequestHeader("Authorization", "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader("cache-control", "no-cache");
+      xhr.setRequestHeader("Postman-Token", "9d5b4a10-bc58-43aa-a418-fe3fe664114a");
+
+      xhr.send(data);
+    </script>
+  </head>
+  <body>
+    <h1>XHR POST</h1>
+  </body>
+</html>
