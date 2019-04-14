@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.tabs.create({url: "https://github.com/leontaolong/tgsb"})
 });
 
-var checked = false;
+var checked = true;
 
 chrome.runtime.onMessage.addListener(
   function gotMessage(message, sender, sendResponse) {
