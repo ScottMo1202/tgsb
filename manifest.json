@@ -1,14 +1,15 @@
 {
     "name": "Even Financial Helper",
     "version": "1.0",
-    "description": "123",
+    "description": "It's not an ad, for real.",
     "permissions": [
         "storage",
         "activeTab",
-        "declarativeContent"
+        "declarativeContent",
+        "tabs"
     ],
     "background": {
-        "scripts": ["background.js"],
+        "scripts": ["./scripts/background.js"],
         "persistent": false
     },
     "content_scripts": [
@@ -21,8 +22,8 @@
             ]
         }
     ], 
-    "page_action":{
-        "default_popup": "popup.html"
+    "browser_action":{
+        "default_popup": "./pages/popup.html"
     },
     "manifest_version": 2
 }
