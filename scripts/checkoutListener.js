@@ -11,12 +11,12 @@ $(() => {
             'https://checkout.stripe.com/',
         ],
         matchers: [
-            'checkout',
+            //'checkout',
             'credit card',
             'creditcard',
             'billing',
             'place order',
-            'pay',
+            //'pay',
             'visa/mastercard',
             'visa / mastercard',
             'visa mastercard',
@@ -24,23 +24,44 @@ $(() => {
             'debit',
         ]
     };
-
-    let checkers = [];
+    let checkers = []
     Object.keys(KEYWORDS).forEach(keywords => {
         checkers = checkers.concat(KEYWORDS[keywords]);
     });
     const found = checkers.any(keyword => 
         $(`*:Contains(${keyword})`).length
     );
+    
+    // const amounts = [];
+    // var pattern = new RegExp(/^\$\d+(,\d{3})*\.?[0-9]?[0-9]?$/);
+    // const allCurrOnPage = $(`*:Contains(${'$'})`).filter(
+    //     allMatch => {
+    //         let t = ''
+    //         try {
+    //             t = allMatch.text()
+    //         } catch {
+    //             t = ''
+    //         }
+    //         console.log(t.match(pattern))
+    //         return t.match(pattern)
+    //     }
+    // );
+    // console.log(allCurrOnPage);
+
     if (found) {
-        const message = {
-            text: "detected",
-            type: "detector"
+        let choose = prompt(`That's a lot of cash!!!  
+Are you broke, wanna a personal loan?
+Yes or No?`, "");
+        if (choose != null && choose.toLowerCase() == "yes") {
+            const message = {
+                text: "detected",
+                type: "detector"
+            }
+            chrome.runtime.sendMessage(message, function(response) {
+                console.log(response.farewell);
+            });
         }
-        console.log()
-        chrome.runtime.sendMessage(message, function(response) {
-            console.log(response.farewell);
-        });
+
     }
     console.log(found);
 });

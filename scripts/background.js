@@ -1,7 +1,8 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.tabs.create({url: "https://github.com/leontaolong/tgsb"})
+  chrome.tabs.create({url: "https://github.com/leontaolong/tgsb"});
+  chrome.storage.sync.set({"check": true})
 });
 
 var checked = true;
@@ -9,8 +10,6 @@ var checked = true;
 chrome.runtime.onMessage.addListener(
   function gotMessage(message, sender, sendResponse) {
     if (message.text == 'detected' && message.type == "detector" && checked) {
-      console.log("checked, ", checked);
-      console.log("message, ", message);
       chrome.tabs.create({url: "../pages/index.html"})
     } else if (message.text == "check" && message.type == "if_use") {
       checked = true;

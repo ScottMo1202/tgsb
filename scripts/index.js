@@ -76,6 +76,13 @@ $(document).ready(function() {
                $("#loanForm").attr("hidden", "");
                $("#result").removeAttr("hidden");
                 var result = JSON.parse(this.responseText);
+                if (!result.loanOffers) {
+                    $("#loanResults").text("No offers found.");
+                    $('#disclaimer').attr("hidden", "");
+                } else {
+                    $("#disclaimer").removeAttr("hidden");
+                    $("#loanResults").text("");
+
                 for (var offer of result.loanOffers) {
                     $("#loanResults").append(
                        ` <a href='#' class='list-group-item list-group-item-action'> 
@@ -92,6 +99,7 @@ $(document).ready(function() {
                         </a>`
                     )
                 }
+            }
 
              }
             });

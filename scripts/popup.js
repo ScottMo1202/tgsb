@@ -2,14 +2,14 @@
 
 window.onload = function() {
     Initialize();
+    checkBox();
 }
 
 function Initialize() {
-    var if_use = document.querySelector("input");
-    chrome.runtime.sendMessage({text: "check", type: "if_use"});
     var even = document.querySelector(".even");
     var git = document.querySelector(".github");
     var mail = document.querySelector(".mail");
+    var checker = document.querySelector(".switch-input");
     even.onclick = function() {
         chrome.tabs.create({url: "https://evenfinancial.com"})
     };
@@ -19,11 +19,20 @@ function Initialize() {
     mail.onclick = function() {
         chrome.tabs.create({url: "mailto:johnny.xcy1997@gmail.com"})
     };
-    if_use.onchange = check_change;
+    checker.onchange = change_check;
 }
 
-function check_change() {
-    if (this.checked) {
+function checkBox() {
+    var checker = document.querySelector(".switch-input");
+    chrome.storage.sync.get(["check"], function(data) {
+        checker.checked = data.check
+    });
+}
+
+function change_check() {
+    var checker = document.querySelector(".switch-input");
+    chrome.storage.sync.set({"check": checker.checked});
+    if (checker.checked) {
         chrome.runtime.sendMessage({text: "check", type: "if_use"});
     } else {
         chrome.runtime.sendMessage({text: "uncheck", type: "if_use"});
