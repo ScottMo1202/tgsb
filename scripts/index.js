@@ -60,7 +60,7 @@ $(document).ready(function () {
 
                     for (var offer of result.loanOffers) {
                         $("#loanResults").append(
-                            ` <a href='#' class='list-group-item list-group-item-action'> 
+                            ` <a href=${offer.url} class='list-group-item list-group-item-action'> 
                             <div class='media'>  
                                 <img src='http://${offer.originator.images[0].url}' class='align-self-center mr-3' width="80" height="50" alt='...'>
                                 <div class='d-flex w-100 justify-content-around'>
