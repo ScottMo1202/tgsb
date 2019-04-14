@@ -43,7 +43,7 @@ Are you broke, get a personal loan!`)) {
                         text: "detected",
                         type: "detector"
                     }
-                    chrome.runtime.sendMessage(message, function (response) {});
+                    chrome.runtime.sendMessage(message);
                 }
             }
         });
