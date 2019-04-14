@@ -12,8 +12,10 @@ chrome.runtime.onMessage.addListener(
       chrome.tabs.create({url: "../pages/index.html"})
     } else if (message.text == "check") {
       checked = true;
+      console.log("true"+message.text)
     } else if (message.text == "uncheck") {
       checked = false;
+      console.log("false"+message.text)
     } else {
       sendResponse({error: "Incorrect message parser."})
     }
