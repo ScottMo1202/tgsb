@@ -36,7 +36,7 @@ $(() => {
         chrome.storage.sync.get(["check"], function (data) {
             if (data.check) {
                 if (confirm(`That's a lot of cash!!!  
-                Are you broke, get a personal loan!`)) {
+Are you broke, get a personal loan!`)) {
                     const message = {
                         text: "detected",
                         type: "detector"
