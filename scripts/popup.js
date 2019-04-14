@@ -6,15 +6,15 @@ window.onload = function() {
     var git = document.querySelector(".github");
     var mail = document.querySelector(".mail");
     if (if_use.checked) {
-        chrome.runtime.sendMessage({text: "check"});
+        chrome.runtime.sendMessage({text: "check", type: "if_use"});
     } else {
-        chrome.runtime.sendMessage({text: "uncheck"});
+        chrome.runtime.sendMessage({text: "uncheck", type: "if_use"});
     }
     if_use.onchange = function() {
         if (if_use.checked) {
-            chrome.runtime.sendMessage({text: "check"});
+            chrome.runtime.sendMessage({text: "check", type: "if_use"});
         } else {
-            chrome.runtime.sendMessage({text: "uncheck"});
+            chrome.runtime.sendMessage({text: "uncheck", type: "if_use"});
         }
     };
     even.onclick = function() {
