@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#error").attr("hidden", "");
+    $("#result").attr("hidden", "");
 
   /*  $("#btnSubmit").click(function(){
         var settings = {
@@ -64,7 +65,7 @@ $(document).ready(function() {
                                 annualIncome: parseInt($("#inputAnnualIncome").val())
                             },
                             legalInformation: {
-                                "consentsToFcra": true, 
+                                "consentsToFcra": $("#consentCheck").prop("checked"), 
                                 "tcpaLanguage": "I agree to be contacted by Even Financial and its partners at the telephone number(s) I have provided above to explore personal loan offers, including contact through automatic dialing systems, artificial or pre-recorded voice messaging, or text message. I understand my consent is not required as a condition to purchasing any goods or services from anyone."
                             }
                     });
@@ -74,7 +75,14 @@ $(document).ready(function() {
       
             xhr.addEventListener("readystatechange", function () {
              if (this.readyState === 4) {
-               console.log(this.responseText);
+               $("#loanForm").attr("hidden", "");
+               $("#result").removeAttr("hidden");
+                var result = JSON.parse(this.responseText);
+                console.log(result.loanOffers);
+                for (var tg of result.loanOffers) {
+                    console.log(tg.originator.name)
+                }
+
              }
             });
       
