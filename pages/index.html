@@ -1,116 +1,157 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-        <link rel="stylesheet" type="text/css" href="../styles/popup.css">
-        <script src="../scripts/popup.js"></script>
-        <title>Click Tester</title>
-    </head>
-    <body>
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Basic Information
-                    </button>
-                </h2>
-                </div>
-            
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="firstName">First Name</label>
-                                <input type="text" class="form-control" id="firstName" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastName">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                            </div>
-                            <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Even</title>
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/popper.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <script src="../scripts/index.js"></script>
+
+</head>
+  <body>
+    <div class="container" >
+      <div id="loanForm">
+      <div class="alert alert-danger" id="error" role="alert">
+          Please fill all required information!
+      </div>
+      <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Required Information
+                </button>
+              </h2>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Credit Information
-                    </button>
-                </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                  <form>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="firstName">First Name</label>
+                              <input type="text" class="form-control" id="inputFirstName">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="lastName">Last Name</label>
+                              <input type="text" class="form-control" id="inputLastName">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4">Email</label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                              <label for="inputLoanAmount">Loan Amount</label>
+                              <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                          <span class="input-group-text">$</span>
+                                      </div>
+                                  <input type="number" class="form-control" id="inputLoanAmount">
+                              </div>
+                      </div>
+                      <div class="form-row">
+                          <label for="inputCreditScore">Credit Score</label>
+                          <input type="number" class="form-control" id="inputCreditScore" placeholder="300-850" min=300 max=850>
+                      </div>
+                    </form>
+                  </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Employment Information
-                    </button>
-                </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Optional Information
+                </button>
+              </h2>
             </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                          </div>
+                          <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                          </div>
+                          <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="inputCity">City</label>
+                              <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="inputState">State</label>
+                              <input type="text" class="form-control" id="inputState">
+                          </div>
+                          <div class="form-group col-md-2">
+                              <label for="inputZip">Zip</label>
+                              <input type="text" class="form-control" id="inputZip">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="inputEducationLevel">Education Level</label>
+                              <select class="custom-select" id="inputEducationLevel">
+                                      <option selected>Choose...</option>
+                                      <option value="associate">Associate</option>
+                                      <option value="bachelors">Bachelors</option>
+                                      <option value="high_school">High School</option>
+                                      <option value="masters">Masters</option>
+                                      <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="inputSSN">SSN</label>
+                              <input type="text" id="inputSSN" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputEmploymentStatus">Employment Status: </label> 
+                          <select class="custom-select" id="inputEmploymentStatus">
+                                  <option selected>Choose...</option>
+                                  <option value="employed">Employed</option>
+                                  <option value="military">Military</option>
+                                  <option value="not_employed">Not Employed</option>
+                                  <option value="self_employed">Self Employed</option>
+                                  <option value="retired">Retired</option>
+                                  <option value="other">Other</option>
+                          </select>
+                      </div>
+                              
+                      <div class="form-group">
+                              <label for="inputAnnualIncome">Annual Income</label>
+                              <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                          <span class="input-group-text">$</span>
+                                      </div>
+                                  <input type="number" class="form-control" id="inputAnnualIncome">
+                              </div>
+                      </div>
+                  </form>
+              </div>
             </div>
-        <button id="clicker">CLICK</button>
-    </body>
+          </div>
+        </div>
+        <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="consentCheck">
+              <label class="form-check-label" for="consentCheck">I agree to be contacted by Even Financial and its partners at the telephone number(s) I have provided above to explore personal loan offers, including contact through automatic dialing systems, artificial or pre-recorded voice messaging, or text message. I understand my consent is not required as a condition to purchasing any goods or services from anyone."</label>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Search</button>
+          </div>
+        <div id="result">
+            <small>Disclaimer: This is an estimate. Actual rates may vary.</small>
+
+            <div id="loanResults" class="list-group"></div>
+            <button type="submit" class="btn btn-primary" id="btnBack">Back</button>
+
+        </div>
+        </div>
+  </body>
 </html>

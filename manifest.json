@@ -9,7 +9,15 @@
         "tabs"
     ],
     "background": {
-        "scripts": ["./scripts/background.js"],
+        "scripts": [
+            "./scripts/background.js",
+            "./scripts/jquery.js",
+            "./scripts/popper.min.js",
+            "./scripts/bootstrap.min.js"
+        ],
+        "css": [
+            "./styles/bootstrap.min.css"
+        ],
         "persistent": false
     },
     "content_scripts": [
