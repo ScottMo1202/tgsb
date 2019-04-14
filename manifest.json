@@ -16,9 +16,9 @@
         {
             "matches": ["http://*/*", "https://*/*"],
             "js": [
-                "./contentScripts/jquery.js", 
-                "./contentScripts/utils.js",
-                "./contentScripts/checkoutListener.js"
+                "./scripts/jquery.js", 
+                "./scripts/utils.js",
+                "./scripts/checkoutListener.js"
             ]
         }
     ], 
