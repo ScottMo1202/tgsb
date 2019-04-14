@@ -32,5 +32,14 @@ $(() => {
     const found = checkers.any(keyword => 
         $(`*:Contains(${keyword})`).length
     );
+    if (found) {
+        const message = {
+            text: "detected",
+            type: "detector"
+        }
+        chrome.runtime.sendMessage(message, function(response) {
+            console.log(response.farewell);
+        });
+    }
     console.log(found);
 });
