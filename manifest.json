@@ -34,7 +34,19 @@
         }
     ], 
     "browser_action":{
-        "default_popup": "./pages/popup.html"
+        "default_popup": "./pages/popup.html",
+        "default_icon": {
+            "16": "./styles/favicon_16.png",
+            "32": "./styles/favicon_32.png",
+            "48": "./styles/favicon_48.png",
+            "128": "./styles/favicon_128.png"
+          }
+    },
+    "icons": {
+        "16": "./styles/favicon_16.png",
+        "32": "./styles/favicon_32.png",
+        "48": "./styles/favicon_48.png",
+        "128": "./styles/favicon_128.png"
     },
     "manifest_version": 2
 }

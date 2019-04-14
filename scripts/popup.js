@@ -45,10 +45,12 @@ function change_check() {
             text: "check",
             type: "if_use"
         });
+        chrome.browserAction.setIcon({path: "../styles/favicon.png"});
     } else {
         chrome.runtime.sendMessage({
             text: "uncheck",
             type: "if_use"
         });
+        chrome.browserAction.setIcon({path: "../styles/favicon_off.png"});
     }
 }
