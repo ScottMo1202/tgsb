@@ -8,7 +8,8 @@ var checked = true;
 
 chrome.runtime.onMessage.addListener(
   function gotMessage(message, sender, sendResponse) {
-    if (message.text == 'detected' && message.type == "detector" && checked) {
+    console.log("message", message)
+    if (message.text == 'detected' && message.type == "detector") {
       chrome.tabs.create({url: "../pages/index.html"})
     } else if (message.text == "check" && message.type == "if_use") {
       checked = true;

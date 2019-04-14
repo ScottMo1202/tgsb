@@ -37,6 +37,7 @@ $(() => {
             text: "detected",
             type: "detector"
         }
+        console.log()
         chrome.runtime.sendMessage(message, function(response) {
             console.log(response.farewell);
         });
