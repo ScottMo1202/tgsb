@@ -29,12 +29,10 @@ $(document).ready(function() {
             if ($('#'+s).val()=="") {
                 $("#error").removeAttr("hidden");
                 $("#error").text("Please fill all required information!");
+                return;
             }
         }
-        if ($("#consentCheck").prop("checked")==false) {
-            $("#error").removeAttr("hidden");
-            $("#error").text("Please check the consent form!");
-        }
+        
 
         var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
             targetUrl = "http://localhost:3000/xhr.html/leads/rateTables"//"https://api.evenfinancial.com/leads/rateTables"
@@ -78,9 +76,21 @@ $(document).ready(function() {
                $("#loanForm").attr("hidden", "");
                $("#result").removeAttr("hidden");
                 var result = JSON.parse(this.responseText);
-                console.log(result.loanOffers);
-                for (var tg of result.loanOffers) {
-                    console.log(tg.originator.name)
+                for (var offer of result.loanOffers) {
+                    $("#loanResults").append(
+                       ` <a href='#' class='list-group-item list-group-item-action'> 
+                            <div class='media'>  
+                                <img src='http://${offer.originator.images[0].url}' class='align-self-center mr-3' width="80" height="50" alt='...'>
+                                <div class='d-flex w-100 justify-content-around'>
+                                    <div class="col"><h5 class='mb-1'>${offer.originator.name}</h5></div>
+                                    <div class="col"><h6>${offer.meanApr}% <small>APR</small></h6></div>
+                                    <div class="col"><h6>$${offer.meanMonthlyPayment}/${offer.termUnit} <small>for ${offer.termLength} ${offer.termUnit}s</small></h6></div>
+                                    <div class="col"><h6>Total Payment: $${offer.meanTotalPayment}</h6></div>
+                                </div>
+                            </div>
+
+                        </a>`
+                    )
                 }
 
              }
@@ -94,5 +104,11 @@ $(document).ready(function() {
       
             xhr.send(data);
         
+    });
+
+    $("#btnBack").click(function(){
+        $("#result").attr("hidden", "");
+        $("#loanForm").removeAttr("hidden");
+        $("#error").attr("hidden", "");
     });
 });
