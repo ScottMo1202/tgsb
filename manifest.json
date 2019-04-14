@@ -1,7 +1,7 @@
 {
     "name": "Even Financial Helper",
     "version": "1.0",
-    "description": "123",
+    "description": "It's not an ad, for real.",
     "permissions": [
         "storage",
         "activeTab",
@@ -15,7 +15,11 @@
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["./scripts/jquery.js", "./scripts/checkoutListener.js" ]
+            "js": [
+                "./contentScripts/jquery.js", 
+                "./contentScripts/utils.js",
+                "./contentScripts/checkoutListener.js"
+            ]
         }
     ], 
     "browser_action":{
