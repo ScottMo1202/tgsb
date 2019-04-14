@@ -49,10 +49,8 @@ $(() => {
     // console.log(allCurrOnPage);
 
     if (found) {
-        let choose = prompt(`That's a lot of cash!!!  
-Are you broke, wanna a personal loan?
-Yes or No?`, "");
-        if (choose != null && choose.toLowerCase() == "yes") {
+        if (confirm(`That's a lot of cash!!!  
+Are you broke, get a personal loan!`)) {
             const message = {
                 text: "detected",
                 type: "detector"
@@ -61,7 +59,6 @@ Yes or No?`, "");
                 console.log(response.farewell);
             });
         }
-
     }
     console.log(found);
 });
